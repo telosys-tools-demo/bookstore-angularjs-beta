@@ -1,0 +1,22 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Synopsis' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'synopsis.bookId' | translate }}</th>
+						<th>{{ 'synopsis.synopsis' | translate }}</th>
+						<th><a class="btn btn-info" href='#/synopsis/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="synopsis in synopsiss">
+						<td>{{synopsis.bookId}}</td>
+						<td>{{synopsis.synopsis}}</td>
+						<td><a class="btn btn-info" href="#/synopsis/{{synopsis.bookId}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

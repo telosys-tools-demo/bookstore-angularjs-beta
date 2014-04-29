@@ -1,0 +1,24 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Badge' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'badge.badgeNumber' | translate }}</th>
+						<th>{{ 'badge.authorizationLevel' | translate }}</th>
+						<th>{{ 'badge.endOfValidity' | translate }}</th>
+						<th><a class="btn btn-info" href='#/badge/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="badge in badges">
+						<td>{{badge.badgeNumber}}</td>
+						<td>{{badge.authorizationLevel}}</td>
+						<td>{{badge.endOfValidity | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/badge/{{badge.badgeNumber}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

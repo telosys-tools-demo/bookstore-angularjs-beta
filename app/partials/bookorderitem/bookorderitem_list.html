@@ -1,0 +1,26 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'BookOrderItem' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'bookOrderItem.bookOrderId' | translate }}</th>
+						<th>{{ 'bookOrderItem.bookId' | translate }}</th>
+						<th>{{ 'bookOrderItem.quantity' | translate }}</th>
+						<th>{{ 'bookOrderItem.price' | translate }}</th>
+						<th><a class="btn btn-info" href='#/bookOrderItem/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="bookOrderItem in bookOrderItems">
+						<td>{{bookOrderItem.bookOrderId}}</td>
+						<td>{{bookOrderItem.bookId}}</td>
+						<td>{{bookOrderItem.quantity | number }}</td>
+						<td>{{bookOrderItem.price | number }}</td>
+						<td><a class="btn btn-info" href="#/bookOrderItem/{{bookOrderItem.bookOrderId}}/{{bookOrderItem.bookId}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

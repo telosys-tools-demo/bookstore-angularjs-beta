@@ -1,0 +1,22 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'EmployeeGroup' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'employeeGroup.employeeCode' | translate }}</th>
+						<th>{{ 'employeeGroup.groupId' | translate }}</th>
+						<th><a class="btn btn-info" href='#/employeeGroup/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="employeeGroup in employeeGroups">
+						<td>{{employeeGroup.employeeCode}}</td>
+						<td>{{employeeGroup.groupId}}</td>
+						<td><a class="btn btn-info" href="#/employeeGroup/{{employeeGroup.employeeCode}}/{{employeeGroup.groupId}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>

@@ -1,0 +1,26 @@
+		<fieldset class="col-sm-12 bordure">
+			<legend class="legende">{{ 'Workgroup' | translate }}</legend>
+		
+			<div ng-include src="'partials/message-include.html'"></div>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>{{ 'workgroup.id' | translate }}</th>
+						<th>{{ 'workgroup.name' | translate }}</th>
+						<th>{{ 'workgroup.description' | translate }}</th>
+						<th>{{ 'workgroup.creationDate' | translate }}</th>
+						<th><a class="btn btn-info" href='#/workgroup/new'>{{ 'create' | translate }}</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="workgroup in workgroups">
+						<td>{{workgroup.id}}</td>
+						<td>{{workgroup.name}}</td>
+						<td>{{workgroup.description}}</td>
+						<td>{{workgroup.creationDate | date:'shortDate'}}</td>
+						<td><a class="btn btn-info" href="#/workgroup/{{workgroup.id}}">{{ 'edit' | translate }}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>
